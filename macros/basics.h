@@ -27,8 +27,10 @@
  *        BASIC MACROS
  * ++++++++++++++++++++++++++++++++++++*/
 
+/// Concatenation for 2 arguments.
 #define BASIC_CONCAT(_A, _B) _A ## _B
 
+/// Concatenation for n arguments.
 #define CONCAT(...) CONCAT_(VA_ARG_NUMBER(__VA_ARGS__),__VA_ARGS__)
 
 //-------------------------------------------------------------------------------------------------

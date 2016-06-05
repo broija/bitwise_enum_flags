@@ -3,7 +3,7 @@
 ######################################################################
 
 TEMPLATE = app
-TARGET = bitwise_enum_flags
+TARGET = enum_bit_flags
 INCLUDEPATH += .
 
 QMAKE_CXXFLAGS += -std=c++11
@@ -14,7 +14,7 @@ HEADERS += compile_time_tools.h \
            fundamental_types.h \
            macros/basics.h \
            macros/bitwise_op.h \
-           macros/bitwise_enum.h \
+           macros/bit_flag_enum.h \
            macros/subtract.h \
            macros/va_arg_number.h
 

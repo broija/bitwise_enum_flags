@@ -20,7 +20,7 @@
 #ifndef SUBDETECTION_MACROS_SUBTRACT_H
 #define SUBDETECTION_MACROS_SUBTRACT_H
 
-#define SUBTRACT(_FIRST,_SECOND) CONCAT(SUBTRACT_,_FIRST,_,_SECOND)
+#define SUBTRACT(_A,_B) CONCAT(SUBTRACT_,_A,_,_B)
 
 //------------------------------------------------------------------------------
 //---------------------------------SUBTRACT helpers-----------------------------

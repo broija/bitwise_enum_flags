@@ -23,7 +23,7 @@
 #include <type_traits>
 #include <limits>
 
-#include "macros/bitwise_enum.h"
+#include "macros/bit_flag_enum.h"
 #include "fundamental_types.h"
 
 template <typename Enum_>
@@ -42,7 +42,7 @@ public:
     constexpr inline bool operator !() const {return !m_value;}
     constexpr inline operator bool() const {return m_value;}
 
-    /// Tests if _flag is set. \warning Only works if Enum_ is a bitwise enum type.
+    /// Tests if _flag is set. \warning Only works if Enum_ is a bit flag enum type.
 //    constexpr inline bool isSet(Enum_ _flag) const {return (m_value & static_cast<ValueType>(_flag));}
 
     constexpr inline bool operator ==(Flags & _other) const {return m_value == _other.m_value;}
@@ -108,16 +108,16 @@ constexpr inline Flags<Enum_> operator |(Enum_ _flag, Flags<Enum_> _flags)
 #define FLAGS_TYPEDEF_FOR_ENUM(_ENUM,_FLAGS) \
     typedef Flags<_ENUM> _FLAGS;
 
-/*! Declares a bitwise enum _ENUM and his associated Flags<_ENUM>, named _FLAGS. Follows enum members.
+/*! Declares a bit flag enum _ENUM and his associated Flags<_ENUM>, named _FLAGS. Follows enum members.
     First declared enum member is associated to the least significant bit.*/
-#define DECLARE_BITWISE_ENUM_FLAGS(_ENUM, _FLAGS, _FLAG1, ...) \
-    DECLARE_BW_ENUM_CLASS(_ENUM, _FLAG1, __VA_ARGS__) \
+#define DECLARE_BIT_FLAG_ENUM_AND_FLAGS(_ENUM, _FLAGS, _FLAG1, ...) \
+    DECLARE_BIT_FLAG_ENUM_CLASS(_ENUM, _FLAG1, __VA_ARGS__) \
     FLAGS_TYPEDEF_FOR_ENUM(_ENUM,_FLAGS)
 
-/*! Declares a bitwise enum _ENUM and his associated Flags<_ENUM>, named _FLAGS. Follows enum members.
+/*! Declares a bit flag enum _ENUM and his associated Flags<_ENUM>, named _FLAGS. Follows enum members.
     First declared enum member is associated to the most significant bit.*/
-#define DECLARE_BITWISE_ENUM_FLAGS_1ST_IS_MSB(_ENUM, _FLAGS, _FLAG1, ...) \
-    DECLARE_BW_ENUM_CLASS_1ST_IS_MSB(_ENUM, _FLAG1, __VA_ARGS__) \
+#define DECLARE_BIT_FLAG_ENUM_AND_FLAGS_1ST_IS_MSB(_ENUM, _FLAGS, _FLAG1, ...) \
+    DECLARE_BIT_FLAG_ENUM_CLASS_1ST_IS_MSB(_ENUM, _FLAG1, __VA_ARGS__) \
     FLAGS_TYPEDEF_FOR_ENUM(_ENUM,_FLAGS)
 
 #endif // SUBDETECTION_FLAGS_H

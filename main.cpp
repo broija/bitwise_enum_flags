@@ -8,23 +8,23 @@
 
 //------------------------------
 
-DECLARE_BW_ENUM_CLASS(My1bitEnum,e1)
-DECLARE_BW_ENUM_CLASS(My2bitEnum,e1,e2)
+DECLARE_BIT_FLAG_ENUM_CLASS(My1bitEnum,e1)
+DECLARE_BIT_FLAG_ENUM_CLASS(My2bitEnum,e1,e2)
 
 
-DECLARE_BITWISE_ENUM_FLAGS(My7bitEnum, My7bitFlags,
+DECLARE_BIT_FLAG_ENUM_AND_FLAGS(My7bitEnum, My7bitFlags,
               e1, e2, e3, e4, e5, e6, e7)
 
-DECLARE_BITWISE_ENUM_FLAGS(My8bitEnum, My8bitFlags,
+DECLARE_BIT_FLAG_ENUM_AND_FLAGS(My8bitEnum, My8bitFlags,
               e1, e2, e3, e4, e5, e6, e7, e8)
 
-DECLARE_BITWISE_ENUM_FLAGS(My32bitEnum, My32bitFlags,
+DECLARE_BIT_FLAG_ENUM_AND_FLAGS(My32bitEnum, My32bitFlags,
               e1, e2, e3, e4, e5, e6, e7, e8, e9,e10,
               e11,e12,e13,e14,e15,e16,e17,e18,e19,e20,
               e21,e22,e23,e24,e25,e26,e27,e28,e29,e30,
               e31,e32)
 
-DECLARE_BITWISE_ENUM_FLAGS(My64bitEnum, My64bitFlags,
+DECLARE_BIT_FLAG_ENUM_AND_FLAGS(My64bitEnum, My64bitFlags,
               e1, e2, e3, e4, e5, e6, e7, e8, e9,e10,
               e11,e12,e13,e14,e15,e16,e17,e18,e19,e20,
               e21,e22,e23,e24,e25,e26,e27,e28,e29,e30,

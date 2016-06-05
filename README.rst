@@ -1,17 +1,17 @@
-Bitwise enum flags
-==================
+Enum bit flags
+==============
 
 Contains:
- - Bitwise enum and enum class declaration macros.
- - **Flags** template class, which stores bitwise enums as flags.
+ - enum bit flags and enum class bit flags declaration macros.
+ - **Flags** template class, which stores enum bit as flags.
  
 See main.cpp for some examples.
 
-Bitwise enum declaration:
+Enum bit flags declaration:
 
 .. code::
 
-  DECLARE_BW_ENUM_CLASS(My7bitEnum, e1, e2, e3, e4, e5, e6, e7)
+  DECLARE_BIT_FLAG_ENUM_CLASS(My7bitEnum, e1, e2, e3, e4, e5, e6, e7)
   
 Is equivalent to:
 
@@ -41,12 +41,12 @@ Which is equivalent to:
     e7 = 0x40,
   };
   
-Bitwise enum flags declaration:
+Flags declaration:
   
 .. code::
 
-  DECLARE_BITWISE_ENUM_FLAGS(My7bitEnum, My7bitFlags,
-                             e1, e2, e3, e4, e5, e6, e7)
+  DECLARE_BIT_FLAG_ENUM_AND_FLAGS(My7bitEnum, My7bitFlags,
+                                  e1, e2, e3, e4, e5, e6, e7)
 
 Is equivalent to:
 
@@ -200,16 +200,16 @@ Allows concatenation for up to 7 arguments.
 
 Uses `BASIC_CONCAT`_ and `VA_ARG_NUMBER`_.
 
-DECLARE_BITWISE_ENUM_FLAGS
---------------------------
+DECLARE_BIT_FLAG_ENUM_AND_FLAGS
+-------------------------------
 
-DECLARE_BITWISE_ENUM_FLAGS_1ST_IS_MSB
--------------------------------------
+DECLARE_BIT_FLAG_ENUM_AND_FLAGS_1ST_IS_MSB
+------------------------------------------
 
-DECLARE_BW_ENUM
----------------
+DECLARE_BIT_FLAG_ENUM
+---------------------
 
-File : **bitwise_enum.**.
+File : **bit_flag_enum.h**.
 
 Uses:
 
@@ -217,24 +217,24 @@ Uses:
  - `VA_ARG_NUMBER`_
  - `BestIntegerBitSizeSelector`_
 
-DECLARE_BW_ENUM_CLASS
----------------------
+DECLARE_BIT_FLAG_ENUM_CLASS
+---------------------------
 
-File : **bitwise_enum.h**.
-
-Uses `BASIC_CONCAT`_ and `VA_ARG_NUMBER`_.
-
-DECLARE_BW_ENUM_1ST_IS_MSB
---------------------------
-
-File : **bitwise_enum.h**.
+File : **bit_flag_enum.h**.
 
 Uses `BASIC_CONCAT`_ and `VA_ARG_NUMBER`_.
 
-DECLARE_BW_ENUM_CLASS_1ST_IS_MSB
+DECLARE_BIT_FLAG_ENUM_1ST_IS_MSB
 --------------------------------
 
-File : **bitwise_enum.h**.
+File : **bit_flag_enum.h**.
+
+Uses `BASIC_CONCAT`_ and `VA_ARG_NUMBER`_.
+
+DECLARE_BIT_FLAG_ENUM_CLASS_1ST_IS_MSB
+--------------------------------------
+
+File : **bit_flag_enum.h**.
 
 Uses `BASIC_CONCAT`_ and `VA_ARG_NUMBER`_.
 
