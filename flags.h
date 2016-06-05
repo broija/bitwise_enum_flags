@@ -40,6 +40,7 @@ public:
     constexpr Flags(Enum_ _flag): m_value(static_cast<ValueType>(_flag)) {}
 
     constexpr inline bool operator !() const {return !m_value;}
+    constexpr inline operator bool() const {return m_value;}
 
     /// Tests if _flag is set. \warning Only works if Enum_ is a bitwise enum type.
 //    constexpr inline bool isSet(Enum_ _flag) const {return (m_value & static_cast<ValueType>(_flag));}

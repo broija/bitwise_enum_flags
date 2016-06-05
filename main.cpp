@@ -185,6 +185,13 @@ int main(int , char **)
 
     if (testFlags64b2 == testFlags64b) printf("OK\n");
 
+    My7bitFlags flags7b = My7bitEnum::e3 | My7bitEnum::e5;
+
+    flags7b |= My7bitEnum::e1;
+
+    if (flags7b & My7bitEnum::e5) printf("My7bitEnum::e5 is set!\n");
+    if (!(flags7b & My7bitEnum::e2)) printf("My7bitEnum::e2 is not set!\n");
+
     return 0;
 }//main
 
