@@ -24,7 +24,7 @@ Is equivalent to:
     e4 = 0x08,
     e5 = 0x10,
     e6 = 0x20,
-    e7 = 0x40,
+    e7 = 0x40
   };
   
 Which is equivalent to:
@@ -38,7 +38,7 @@ Which is equivalent to:
     e4 = 0x08,
     e5 = 0x10,
     e6 = 0x20,
-    e7 = 0x40,
+    e7 = 0x40
   };
   
 Flags declaration:
@@ -59,7 +59,7 @@ Is equivalent to:
     e4 = 0x08,
     e5 = 0x10,
     e6 = 0x20,
-    e7 = 0x40,
+    e7 = 0x40
   };
 
   typedef Flags<My7bitEnum> My7bitFlags;
@@ -72,8 +72,8 @@ Then you can use **My7bitFlags** class this way:
 
     flags7b |= My7bitEnum::e1;
 
-    if (flags7b & My7bitEnum::e5) printf("My7bitEnum::e5 is set!\n");
-    if (!(flags7b & My7bitEnum::e2)) printf("My7bitEnum::e2 is not set!\n");
+    if (flags7b & My7bitEnum::e5) printf("My7bitEnum::e5 is set!\n");//Writes My7bitEnum::e5 is set!
+    if (!(flags7b & My7bitEnum::e2)) printf("My7bitEnum::e2 is not set!\n");//Writes My7bitEnum::e2 is not set!
       
 .. contents::
 
