@@ -204,9 +204,9 @@ Uses:
 
  - `BASIC_CONCAT`_
  - `VA_ARG_NUMBER`_
- - `BestIntegerBitSizeSelector`_
  - `PRV_LEFT_SHIFT_1`_
  - `PRV_SUBTRACT`_
+ - `BestIntegerBitSizeSelector`_
 
 DECLARE_BIT_FLAG_ENUM_CLASS
 ---------------------------
@@ -232,7 +232,7 @@ Uses `BASIC_CONCAT`_ and `VA_ARG_NUMBER`_.
 PRV_LEFT_SHIFT_1
 ----------------
 
-File : **bitwise_op.h**.
+File : **prv_bitwise_op.h**.
 
 **Warning** : not intended to be used!
 
@@ -243,7 +243,7 @@ Uses `BASIC_CONCAT`_.
 PRV_SUBTRACT
 ------------
 
-File : **subtract.h**.
+File : **prv_subtract.h**.
 
 **Warning** : not intended to be used!
 
