@@ -105,19 +105,4 @@ constexpr inline Flags<Enum_> operator |(Enum_ _flag, Flags<Enum_> _flags)
 
 //---------------------------------
 
-#define FLAGS_TYPEDEF_FOR_ENUM(_ENUM,_FLAGS) \
-    typedef Flags<_ENUM> _FLAGS;
-
-/*! Declares a bit flag enum _ENUM and his associated Flags<_ENUM>, named _FLAGS. Follows enum members.
-    First declared enum member is associated to the least significant bit.*/
-#define DECLARE_BIT_FLAG_ENUM_AND_FLAGS(_ENUM, _FLAGS, _FLAG1, ...) \
-    DECLARE_BIT_FLAG_ENUM_CLASS(_ENUM, _FLAG1, __VA_ARGS__) \
-    FLAGS_TYPEDEF_FOR_ENUM(_ENUM,_FLAGS)
-
-/*! Declares a bit flag enum _ENUM and his associated Flags<_ENUM>, named _FLAGS. Follows enum members.
-    First declared enum member is associated to the most significant bit.*/
-#define DECLARE_BIT_FLAG_ENUM_AND_FLAGS_1ST_IS_MSB(_ENUM, _FLAGS, _FLAG1, ...) \
-    DECLARE_BIT_FLAG_ENUM_CLASS_1ST_IS_MSB(_ENUM, _FLAG1, __VA_ARGS__) \
-    FLAGS_TYPEDEF_FOR_ENUM(_ENUM,_FLAGS)
-
 #endif // SUBDETECTION_FLAGS_H

@@ -2,8 +2,6 @@
 #include <cstdint>
 #include <cstdio>
 
-#include <qflags.h>
-
 #include "flags.h"
 
 //------------------------------
@@ -11,20 +9,23 @@
 DECLARE_BIT_FLAG_ENUM_CLASS(My1bitEnum,e1)
 DECLARE_BIT_FLAG_ENUM_CLASS(My2bitEnum,e1,e2)
 
+DECLARE_BIT_FLAG_ENUM_CLASS(My7bitEnum, e1, e2, e3, e4, e5, e6, e7)
 
-DECLARE_BIT_FLAG_ENUM_AND_FLAGS(My7bitEnum, My7bitFlags,
-              e1, e2, e3, e4, e5, e6, e7)
+typedef Flags<My7bitEnum> My7bitFlags;
 
-DECLARE_BIT_FLAG_ENUM_AND_FLAGS(My8bitEnum, My8bitFlags,
-              e1, e2, e3, e4, e5, e6, e7, e8)
+DECLARE_BIT_FLAG_ENUM_CLASS(My8bitEnum, e1, e2, e3, e4, e5, e6, e7, e8)
 
-DECLARE_BIT_FLAG_ENUM_AND_FLAGS(My32bitEnum, My32bitFlags,
+typedef Flags<My8bitEnum> My8bitFlags;
+
+DECLARE_BIT_FLAG_ENUM_CLASS(My32bitEnum,
               e1, e2, e3, e4, e5, e6, e7, e8, e9,e10,
               e11,e12,e13,e14,e15,e16,e17,e18,e19,e20,
               e21,e22,e23,e24,e25,e26,e27,e28,e29,e30,
               e31,e32)
 
-DECLARE_BIT_FLAG_ENUM_AND_FLAGS(My64bitEnum, My64bitFlags,
+typedef Flags<My32bitEnum> My32bitFlags;
+
+DECLARE_BIT_FLAG_ENUM_CLASS(My64bitEnum,
               e1, e2, e3, e4, e5, e6, e7, e8, e9,e10,
               e11,e12,e13,e14,e15,e16,e17,e18,e19,e20,
               e21,e22,e23,e24,e25,e26,e27,e28,e29,e30,
@@ -32,6 +33,8 @@ DECLARE_BIT_FLAG_ENUM_AND_FLAGS(My64bitEnum, My64bitFlags,
               e41,e42,e43,e44,e45,e46,e47,e48,e49,e50,
               e51,e52,e53,e54,e55,e56,e57,e58,e59,e60,
               e61,e62,e63,e64)
+
+typedef Flags<My64bitEnum> My64bitFlags;
 
 //------------------------------
 

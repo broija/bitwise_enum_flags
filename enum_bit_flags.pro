@@ -13,9 +13,9 @@ HEADERS += compile_time_tools.h \
            flags.h \
            fundamental_types.h \
            macros/basics.h \
-           macros/bitwise_op.h \
            macros/bit_flag_enum.h \
-           macros/subtract.h \
+           macros/prv_bitwise_op.h \
+           macros/prv_subtract.h \
            macros/va_arg_number.h
 
 SOURCES += main.cpp

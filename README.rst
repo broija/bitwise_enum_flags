@@ -45,25 +45,8 @@ Flags declaration:
   
 .. code::
 
-  DECLARE_BIT_FLAG_ENUM_AND_FLAGS(My7bitEnum, My7bitFlags,
-                                  e1, e2, e3, e4, e5, e6, e7)
-
-Is equivalent to:
-
-.. code::
-
-  enum class My7bitEnum : uint8 {
-    e1 = 0x01,
-    e2 = 0x02,
-    e3 = 0x04,
-    e4 = 0x08,
-    e5 = 0x10,
-    e6 = 0x20,
-    e7 = 0x40
-  };
-
   typedef Flags<My7bitEnum> My7bitFlags;
-  
+
 Then you can use **My7bitFlags** class this way:
 
 .. code::
@@ -77,10 +60,22 @@ Then you can use **My7bitFlags** class this way:
       
 .. contents::
 
-fundamental_types.h
-...................
+Fundamental types
+.................
 
-C fixed size types redeclared.
+File : **fundamental_types.h**/
+
+C fixed-size types redeclared.
+
+ - int8 : int8_t
+ - int16 : int16_t
+ - int32 : int32_t
+ - int64 : int64_t
+
+ - uint8 : uint8_t
+ - uint16 : uint16_t
+ - uint32 : uint32_t
+ - uint64 : uint64_t
 
 Templates
 .........
@@ -200,12 +195,6 @@ Allows concatenation for up to 7 arguments.
 
 Uses `BASIC_CONCAT`_ and `VA_ARG_NUMBER`_.
 
-DECLARE_BIT_FLAG_ENUM_AND_FLAGS
--------------------------------
-
-DECLARE_BIT_FLAG_ENUM_AND_FLAGS_1ST_IS_MSB
-------------------------------------------
-
 DECLARE_BIT_FLAG_ENUM
 ---------------------
 
@@ -216,6 +205,8 @@ Uses:
  - `BASIC_CONCAT`_
  - `VA_ARG_NUMBER`_
  - `BestIntegerBitSizeSelector`_
+ - `PRV_LEFT_SHIFT_1`_
+ - `PRV_SUBTRACT`_
 
 DECLARE_BIT_FLAG_ENUM_CLASS
 ---------------------------
@@ -238,21 +229,25 @@ File : **bit_flag_enum.h**.
 
 Uses `BASIC_CONCAT`_ and `VA_ARG_NUMBER`_.
 
-LEFT_SHIFT_1
-------------
+PRV_LEFT_SHIFT_1
+----------------
 
 File : **bitwise_op.h**.
+
+**Warning** : not intended to be used!
 
 Left shifts '1' N times.
 
 Uses `BASIC_CONCAT`_.
 
-SUBTRACT
---------
+PRV_SUBTRACT
+------------
 
 File : **subtract.h**.
 
-Subtracts 2 arguments. Usage SUBTRACT(X,Y), with 1 <= Y <= X <= 64.
+**Warning** : not intended to be used!
+
+Subtracts 2 arguments. Usage PRV_SUBTRACT(X,Y), with 1 <= Y <= X <= 64.
 
 Uses `CONCAT`_.
 
