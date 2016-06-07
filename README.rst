@@ -9,13 +9,13 @@ See main.cpp for some examples.
 
 Enum bit flags declaration:
 
-.. code::
+.. code:: cpp
 
   DECLARE_BIT_FLAG_ENUM_CLASS(My7bitEnum, e1, e2, e3, e4, e5, e6, e7)
   
-Is equivalent to:
+is equivalent to:
 
-.. code::
+.. code:: cpp
 
   enum class My7bitEnum : BestIntegerBitSizeSelector<7,false>::Type {
     e1 = 0x01,
@@ -27,9 +27,9 @@ Is equivalent to:
     e7 = 0x40
   };
   
-Which is equivalent to:
+which is equivalent to:
 
-.. code::
+.. code:: cpp
 
   enum class My7bitEnum : uint8 {
     e1 = 0x01,
@@ -43,13 +43,13 @@ Which is equivalent to:
   
 Flags declaration:
   
-.. code::
+.. code:: cpp
 
   typedef Flags<My7bitEnum> My7bitFlags;
 
 Then you can use **My7bitFlags** class this way:
 
-.. code::
+.. code:: cpp
 
     My7bitFlags flags7b = My7bitEnum::e3 | My7bitEnum::e5;
 
@@ -200,8 +200,28 @@ DECLARE_BIT_FLAG_ENUM
 
 File : **bit_flag_enum.h**.
 
-Uses:
+Declares enum bit flags. First parameter is enum type name. Others are enum members.
 
+ - Supports up to 64 enum members.
+ - Each member value equals (1 << (member_index -1)). 
+
+Usage:
+
+.. code:: cpp
+
+  DECLARE_BIT_FLAG_ENUM(MyEnum, e1, e2, e3)
+
+expands to:
+  
+.. code:: cpp
+
+  enum MyEnum : uint8 {
+    e1 = 0x01,
+    e2 = 0x02,
+    e3 = 0x04
+  };
+
+Uses:
  - `BASIC_CONCAT`_
  - `VA_ARG_NUMBER`_
  - `PRV_LEFT_SHIFT_1`_
@@ -213,21 +233,89 @@ DECLARE_BIT_FLAG_ENUM_CLASS
 
 File : **bit_flag_enum.h**.
 
-Uses `BASIC_CONCAT`_ and `VA_ARG_NUMBER`_.
+Same as `DECLARE_BIT_FLAG_ENUM`_ but declares an enum class.
+
+Usage:
+
+.. code:: cpp
+
+  DECLARE_BIT_FLAG_ENUM_CLASS(MyEnum, e1, e2, e3)
+
+expands to:
+  
+.. code:: cpp
+
+  enum class MyEnum : uint8 {
+    e1 = 0x01,
+    e2 = 0x02,
+    e3 = 0x04
+  };
+
+Uses:
+ - `BASIC_CONCAT`_
+ - `VA_ARG_NUMBER`_
+ - `PRV_LEFT_SHIFT_1`_
+ - `PRV_SUBTRACT`_
+ - `BestIntegerBitSizeSelector`_
 
 DECLARE_BIT_FLAG_ENUM_1ST_IS_MSB
 --------------------------------
 
 File : **bit_flag_enum.h**.
 
-Uses `BASIC_CONCAT`_ and `VA_ARG_NUMBER`_.
+Declares enum bit flags. First parameter is enum type name. Others are enum members.
+
+ - Supports up to 64 enum members.
+ - Each member value equals 2^(member_count - member_index -1). 
+
+Usage:
+
+.. code:: cpp
+
+  DECLARE_BIT_FLAG_ENUM_1ST_IS_MSB(MyEnum, e1, e2, e3)
+
+expands to:
+  
+.. code:: cpp
+
+  enum MyEnum : uint8 {
+    e1 = 0x04,
+    e2 = 0x02,
+    e3 = 0x01
+  };
+
+Uses:
+ - `BASIC_CONCAT`_
+ - `VA_ARG_NUMBER`_
+ - `BestIntegerBitSizeSelector`_
 
 DECLARE_BIT_FLAG_ENUM_CLASS_1ST_IS_MSB
 --------------------------------------
 
 File : **bit_flag_enum.h**.
 
-Uses `BASIC_CONCAT`_ and `VA_ARG_NUMBER`_.
+Same as `DECLARE_BIT_FLAG_ENUM`_ but declares an enum class.
+
+Usage:
+
+.. code:: cpp
+
+  DECLARE_BIT_FLAG_ENUM_CLASS_1ST_IS_MSB(MyEnum, e1, e2, e3)
+
+expands to:
+  
+.. code:: cpp
+
+  enum class MyEnum : uint8 {
+    e1 = 0x04,
+    e2 = 0x02,
+    e3 = 0x01
+  };
+
+Uses:
+ - `BASIC_CONCAT`_
+ - `VA_ARG_NUMBER`_
+ - `BestIntegerBitSizeSelector`_
 
 PRV_LEFT_SHIFT_1
 ----------------
@@ -247,7 +335,7 @@ File : **prv_subtract.h**.
 
 **Warning** : not intended to be used!
 
-Subtracts 2 arguments. Usage PRV_SUBTRACT(X,Y), with 1 <= Y <= X <= 64.
+Subtracts 2 arguments.
 
 Uses `CONCAT`_.
 
