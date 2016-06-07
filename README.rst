@@ -126,6 +126,8 @@ Flags
 File : **flags.h**.
 
 Type : template class.
+
+Handles enum members of a chosen enum type like flags. Enum values can be set and cleared.
  
 HasLessOrEqualSize
 ------------------
